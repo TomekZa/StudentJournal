@@ -22,14 +22,14 @@
         <project-build-java-target>1.8</project-build-java-target>
 
         <!-- Version properties-->
-        <spring-core-version>5.0.6.RELEASE</spring-core-version>
-        <spring-context-version>5.0.6.RELEASE</spring-context-version>
-        <spring-webmcv-version>5.0.6.RELEASE</spring-webmcv-version>
-        <spring-version-orm>5.0.6.RELEASE</spring-version-orm>
-        <spring-version-tx>5.0.6.RELEASE</spring-version-tx>
-        <spring-version-jdbc>5.0.6.RELEASE</spring-version-jdbc>
-        <spring-version-test>5.0.6.RELEASE</spring-version-test>
-        <spring-security-version>4.2.2.RELEASE</spring-security-version>
+        <spring-core-version>5.0.7.RELEASE</spring-core-version>
+        <spring-context-version>5.0.7.RELEASE</spring-context-version>
+        <spring-webmcv-version>5.0.7.RELEASE</spring-webmcv-version>
+        <spring-version-orm>5.0.7.RELEASE</spring-version-orm>
+        <spring-version-tx>5.0.7.RELEASE</spring-version-tx>
+        <spring-version-jdbc>5.0.7.RELEASE</spring-version-jdbc>
+        <spring-version-test>5.0.7.RELEASE</spring-version-test>
+        <spring-security-version>4.2.4.RELEASE</spring-security-version>
         <spring-data-jpa-version>1.11.3.RELEASE</spring-data-jpa-version>
         <javax-servlet-api-version>4.0.0</javax-servlet-api-version>
         <mockito-version>2.8.9</mockito-version>
