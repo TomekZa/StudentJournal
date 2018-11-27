@@ -7,16 +7,21 @@ import org.springframework.context.annotation.Import;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import org.springframework.core.io.ClassPathResource;
 
+
 @Configuration
 @Import(DataBaseConfig.class)
 @ComponentScan(basePackages = "pl.StudentJournal.configuration")
 public class ApplicationConfig {
 
+
     @Bean
-    public PropertySourcesPlaceholderConfigurer placeholderConfigurer(){
+    public PropertySourcesPlaceholderConfigurer placeholderConfigurer() {
         PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer = new PropertySourcesPlaceholderConfigurer();
         propertySourcesPlaceholderConfigurer.setLocations(new ClassPathResource("database.properties"));
 
         return propertySourcesPlaceholderConfigurer;
     }
+
+
+
 }

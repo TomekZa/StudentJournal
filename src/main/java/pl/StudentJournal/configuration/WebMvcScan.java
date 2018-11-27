@@ -14,7 +14,7 @@ import org.thymeleaf.spring5.view.ThymeleafViewResolver;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan ("pl.StudentJournal")
+@ComponentScan("pl.StudentJournal")
 public abstract class WebMvcScan implements WebMvcConfigurer {
 
 
@@ -26,8 +26,8 @@ public abstract class WebMvcScan implements WebMvcConfigurer {
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry resourceHandlerRegistry) {
         resourceHandlerRegistry
-                .addResourceHandler("/css/**/*")
-                .addResourceLocations("/WEB-INF/css/");
+                .addResourceHandler("/css/**/*", "/img/**/*")
+                .addResourceLocations("/WEB-INF/css/", "/WEB-INF/img/");
     }
 
 
@@ -35,16 +35,17 @@ public abstract class WebMvcScan implements WebMvcConfigurer {
     private ApplicationContext applicationContext;
 
     @Bean
-    public SpringResourceTemplateResolver templateResolver(){
+    public SpringResourceTemplateResolver templateResolver() {
         SpringResourceTemplateResolver templateResolver = new SpringResourceTemplateResolver();
         templateResolver.setApplicationContext(applicationContext);
         templateResolver.setPrefix("/WEB-INF/");
         templateResolver.setSuffix(".html");
+        templateResolver.setTemplateMode("HTML5");
         return templateResolver;
     }
 
     @Bean
-    public SpringTemplateEngine springTemplateEngine(){
+    public SpringTemplateEngine springTemplateEngine() {
         SpringTemplateEngine springTemplateEngine = new SpringTemplateEngine();
         springTemplateEngine.setTemplateResolver(templateResolver());
         springTemplateEngine.setEnableSpringELCompiler(true);
@@ -54,7 +55,7 @@ public abstract class WebMvcScan implements WebMvcConfigurer {
 
     @Override
     public void configureViewResolvers(ViewResolverRegistry registry) {
-        ThymeleafViewResolver  thymeleafViewResolver = new ThymeleafViewResolver();
+        ThymeleafViewResolver thymeleafViewResolver = new ThymeleafViewResolver();
         thymeleafViewResolver.setTemplateEngine(springTemplateEngine());
         registry.viewResolver(thymeleafViewResolver);
     }
@@ -71,7 +72,7 @@ public abstract class WebMvcScan implements WebMvcConfigurer {
 
 
     @Bean //Kodowanie polskich znaków z bazy
-    public ThymeleafViewResolver thymeleafViewResolver(SpringTemplateEngine springTemplateEngine){
+    public ThymeleafViewResolver thymeleafViewResolver(SpringTemplateEngine springTemplateEngine) {
         ThymeleafViewResolver thresolver = new ThymeleafViewResolver();
         thresolver.setTemplateEngine(springTemplateEngine);
         thresolver.setCharacterEncoding("ISO-8859-2");

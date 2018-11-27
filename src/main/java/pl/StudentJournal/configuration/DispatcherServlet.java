@@ -11,11 +11,11 @@ public class DispatcherServlet extends AbstractAnnotationConfigDispatcherServlet
 
     @Override
     protected Class<?>[] getServletConfigClasses() {
-        return new Class[] {WebMvcScan.class};
+        return new Class[]{WebMvcScan.class};
     }
 
     @Override
     protected String[] getServletMappings() {
-        return new String[] {"/"};
+        return new String[]{"/"};
     }
 }
