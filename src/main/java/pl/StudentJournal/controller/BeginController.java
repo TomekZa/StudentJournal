@@ -12,7 +12,7 @@ public class BeginController {
 
     @RequestMapping(value = REQUEST_BEGIN, method = RequestMethod.GET)
 
-    public String schowBeginPage(){
+    public String schowBeginPage() {
         return VIEW_BEGIN_PAGE;
     }
 
