@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" th:href="@{/css/style.css}" href="css/style.css"/>
+    <meta http-equiv="Content-type" content="text/html; charset=ISO-8859-2"/>
+    <title>Edytuj Ucznia</title>
+</head>
+<body>
+<h1>Edytuj Ucznia</h1>
+<div>
+    <form action="#" th:action="@{/edit-save-student}" th:object="${student}" method="post">
+        <input type="hidden" th:value="${id}" th:field="*{id}"/>
+
+        <div class="form-student">
+            <label>Imię: </label> <input class="form-input-student-field" type="text" th:field="*{name}" name="name">
+            <label>Nazwisko: </label> <input class="form-input-student-field" type="text" th:field="*{surname}" name="surname">
+            <label>Klasa: </label> <input class="form-input-student-field" type="text" th:field="*{schoolClass}" name="schoolClass">
+            <div class="form-button">
+                <br><input type="submit" value="Zapisz zmiany" class="submit-add"/>
+            </div>
+        </div>
+    </form>
+</div>
+<div class="button-show-container">
+    <div class="button-show"><a th:href="@{/students.html}" class="link-button">Lista Uczniów</a></div>
+
+</div>
+</body>
+</html>

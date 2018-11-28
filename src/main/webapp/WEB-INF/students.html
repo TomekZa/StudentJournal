@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" th:href="@{/css/style.css}" href="css/style.css"/>
+    <meta http-equiv="Content-type" content="text/html; charset=ISO-8859-2"/>
+    <title>Uczniowie</title>
+</head>
+<body>
+<h1>Uczniowie</h1>
+<div>
+    <div class="form-area">
+        <table>
+            <tr>
+                <th>Numer</th>
+                <th>Imię</th>
+                <th>Nazwisko</th>
+                <th>Klasa</th>
+                <th>Edytuj</th>
+                <th>Usuń</th>
+            </tr>
+
+            <tr th:each="list,iterator : ${allStudents}">
+
+                <td th:text="${iterator.count}"></td>
+                <td th:text="${list.name}"></td>
+                <td th:text="${list.surname}"></td>
+                <td th:text="${list.schoolClass}"></td>
+
+                <td><a th:href="@{'/edit/' + ${list.id}}"><img src="img/edit.png" class="img-style"> </a></td>
+                <td><a th:href="@{'/delete/' + ${list.id}}"><img src="img/delete.png" class="img-style"></a></td>
+            </tr>
+        </table>
+    </div>
+    <div class="button-show"><a th:href="@{/}" class="link-button">BACK</a></div>
+</div>
+</body>
+</html>
